@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="Author" content="edmundpereira18@gmail.com"/>
-    <link href="styles.css" rel="stylesshet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="styles.css" rel="stylesheet"/>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet-icons">
     <title>Invest Page</title>
 </head>
-<body>
+<body class="body">
     <div class="Header">
         <div class="Investment-list">
-            <ul class="Invest Button-Hover">
-            <li>Invest</li>
-            <li>Later</li>
-            <li>Early Invest</li>
-            <li>Sustainable</li>
-            <li>Bits of Bitcoin</li>
-        </ul>
+         <select name="investment-options" id="investment-options">
+           <option value="invest">Invest</option>
+           <option value="later">Later</option>
+           <option value="early-invest">Early Invest</option>
+           <option value="sustainable">Sustainable</option>
+           <option value="bitcoin">Bitcoin</option>
+         </select>
+        </div>
         </div>
         <div class="Banking-Button">
             <a href="banking.html">Banking</a>
@@ -31,21 +33,63 @@
             <a href="Pricing.html">Pricing</a>
         </div>
         <br/>
-
-        <div class="login">
-            <a href="Login.html">Login</a>
-        </div>
-        <div class="signup-page">
-            <a href="Sign-Up.html">Sign-Up</a>
-        </div>
+        
+        <section class="login-signup section">
+         <div class="login-page">
+             <a href="Login.html">Login</a>
+         </div>
+         <div class="signup-page">
+           <button class="signup-button"><a class="signup-link" href="Sign-Up.html">Get Started</a> </button>
+          </div>
+        </section>
     </div>
     <br/>
 
     <div class="Header-Banner">
         <h1 class="Header-Banner-h1">INVESTMENT ACCOUNT</h1>
         <h2 class="Header-Banner-h2">Invest</h2>
-        <p>Easy, automated investing, starting with spare change.</p>
-        <a class="Get-started" href="#">Get Started</a>
+        <p class="p1">Easy, automated investing, starting with spare change.</p>
+            <a class="Get-started-link" href="#"><button class="Get-started">Get Started</button></a>
     </div>
+        <br/>
+
+        <div class="Estimate-Calculator">
+        <h3>CALCULATE YOU ESTIMATE</h3>
+        <h1 class="h1-potential">See Your Potential</h1>
+        <p>Check out our compound interest calculator to see<br/> just how much the power of time and compound
+         interest can help your money grow.</p>
+    </div>
+    <div class="main-content">
+      <div class="input-section">
+        <span class="init-text">INITIAL DEPOSIT</span>
+        <br/>
+        <input id="Initial-deposit" type="number" placeholder="$"> <br/>
+
+        <span class="cont-text">CONTRIBUTIONS</span>
+        <br/>
+        <input id="Contributions" type="number" placeholder="$"> <br/>
+        <label><input type="radio" name="contribution-frequency">Annual</label>
+        <label><input type="radio" name="contribution-frequency">Monthly</label> <br/>
+        <label><input type="radio" name="contribution-frequency">Weekly</label>
+        <label><input type="radio" name="contribution-frequency">Daily</label>
+
+        <h4>YEARS TO GROW</h4>
+        <label for="years-to-grow"></label>
+        <span id="years-to-grow-value">0 Years</span> <br/>
+        <input type="range" id="years-to-grow" min="0" max="100" value="0"> <br/>
+       
+        <span class="init-text">AVERAGE ANNUAL RETURN</span>
+        <br/>
+        <input id="annual-interest" type="number" placeholder="%"> <br/>
+        <div class="calculate button">
+          <button id="Calculate-button">Calculate</button>
+        </div>
+      </div>
+      <div class="output-section">
+        <h3>POTENTIAL FUTURE VALUE</h3>
+        <h1 id="future-value">$0.00</h1>
+      </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
